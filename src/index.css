@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    background: #0b1120;
+    color: white;
+    font-family: Arial;
+    font-family: "Inter", sans-serif;
+    background: #131720;
+}
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #0f172a;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Movie Row */
+
+.movie-row {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+/* Movie Card */
+
+.movie-card {
+    min-width: 250px;
+    height: 350px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.movie-card:hover {
+    transform: scale(1.08);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Overlay */
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(transparent, black);
+}
+
+/* Detail */
+
+.detail {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.detail img {
+    width: 300px;
+    border-radius: 10px;
+}

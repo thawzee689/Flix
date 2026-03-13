@@ -1,0 +1,815 @@
+/* ===================== NAVBAR BASE ===================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 5%;
+    background: #0b1726;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* ===================== LEFT SIDE ===================== */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 1.5vw, 15px);
+    margin-right: 2%;
+}
+
+.logo-spacer {
+    width: clamp(30px, 4vw, 60px);
+}
+
+.nav-logo {
+    height: clamp(24px, 2.5vw, 30px);
+}
+
+/* ===================== DESKTOP MENU ===================== */
+.nav-links {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: clamp(15px, 2vw, 25px);
+    list-style: none;
+    color: #c7d2e3;
+    margin: 0;
+    padding: 0;
+    margin-left: clamp(20px, 4vw, 50px);
+}
+
+.nav-links li {
+    cursor: pointer;
+    transition: 0.3s;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: clamp(12px, 1.2vw, 15px);
+}
+
+.nav-links li:hover {
+    color: #1f80e0;
+}
+
+.dot-separator {
+    color: #c7d2e3;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* Live indicator */
+.live-indicator {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 2px;
+}
+
+.live-dot {
+    width: clamp(5px, 0.6vw, 8px);
+    height: clamp(5px, 0.6vw, 8px);
+    background: red;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+/* ===================== RIGHT SIDE ===================== */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 1.5vw, 20px);
+    margin-right: 0;
+}
+
+/* ===================== SEARCH ===================== */
+.search-wrapper {
+    position: relative;
+}
+
+.search-wrapper input {
+    width: clamp(120px, 12vw, 170px);
+    padding: clamp(6px, 0.8vw, 10px) clamp(20px, 2.5vw, 30px) clamp(6px, 0.8vw, 10px) clamp(10px, 1.2vw, 15px);
+    border-radius: 50px;
+    border: none;
+    background: #13233d;
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: clamp(12px, 1vw, 14px);
+}
+
+.search-wrapper input::placeholder {
+    color: #8899b8;
+    font-style: italic;
+}
+
+.search-wrapper input:focus {
+    background: #1a2b45;
+    width: clamp(130px, 13vw, 180px);
+}
+
+.search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #1f80e0;
+    transition: color 0.3s ease;
+    font-size: clamp(12px, 1.2vw, 15px);
+}
+
+.search-wrapper:hover .search-icon {
+    color: #ffffff;
+}
+
+/* ===================== SIGN IN ===================== */
+.signin-btn {
+    display: flex;
+    align-items: center;
+    gap: clamp(4px, 0.8vw, 8px);
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+    font-size: clamp(12px, 1.2vw, 15px);
+    flex-direction: row-reverse;
+}
+
+.signin-btn:hover {
+    color: #1f80e0;
+}
+
+.signin-icon {
+    font-size: clamp(14px, 1.5vw, 18px);
+}
+
+.signin-text {
+    font-size: clamp(12px, 1.1vw, 14px);
+}
+
+/* ===================== HAMBURGER - HIDDEN BY DEFAULT ===================== */
+.menu-toggle {
+    display: none !important;
+    background: none;
+    border: none;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+    z-index: 1002;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-toggle:hover {
+    color: #1f80e0;
+    transform: scale(1.1);
+}
+
+/* ===================== LARGE DESKTOP (1400px and above) ===================== */
+@media (min-width: 1400px) {
+    .navbar {
+        padding: 20px 6%;
+    }
+
+    .signin-btn {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .nav-left {
+        margin-left: 3%;
+    }
+
+    .logo-spacer {
+        width: 12vw;
+        max-width: 220px;
+    }
+
+    .nav-links {
+        gap: 3vw;
+        margin-left: 4vw;
+    }
+
+    .nav-links li {
+        font-size: 16px;
+    }
+
+    .search-wrapper input {
+        width: 11vw;
+        max-width: 180px;
+    }
+
+    .nav-right {
+        gap: 2vw;
+        margin-right: 15vw;
+    }
+
+    /* Ensure hamburger is hidden */
+    .menu-toggle {
+        display: none !important;
+    }
+
+    /* Hide mobile menu */
+    .mobile-menu {
+        display: none !important;
+    }
+
+}
+
+/* ===================== DESKTOP (1200px - 1399px) ===================== */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .navbar {
+        padding: 18px 5%;
+    }
+
+    .signin-btn {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .nav-left {
+        margin-left: -5%;
+    }
+
+    .logo-spacer {
+        width: 12vw;
+        max-width: 200px;
+    }
+
+    .nav-links {
+        gap: 3.5vw;
+        margin-left: 4vw;
+    }
+
+    .nav-links li {
+        font-size: 15px;
+    }
+
+    .search-wrapper input {
+        width: 11vw;
+        max-width: 170px;
+    }
+
+    .nav-right {
+        gap: 1.5vw;
+        margin-right: 4vw;
+    }
+
+    /* Ensure hamburger is hidden */
+    .menu-toggle {
+        display: none !important;
+    }
+
+    /* Hide mobile menu */
+    .mobile-menu {
+        display: none !important;
+    }
+}
+
+/* ===================== SMALL DESKTOP (1024px - 1199px) ===================== */
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .navbar {
+        padding: 16px 4%;
+    }
+
+    .signin-btn {
+        flex-direction: row;
+        gap: 6px;
+    }
+
+    .nav-left {
+        margin-left: -3%;
+    }
+
+    .logo-spacer {
+        width: 10vw;
+        max-width: 150px;
+    }
+
+    .nav-links {
+        gap: 2.5vw;
+        margin-left: 3vw;
+    }
+
+    .nav-links li {
+        font-size: 14px;
+    }
+
+    .live-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .search-wrapper input {
+        width: 12vw;
+        max-width: 150px;
+        padding: 8px 25px 8px 12px;
+    }
+
+    .nav-right {
+        gap: 1.2vw;
+        margin-right: 3vw;
+    }
+
+    /* Ensure hamburger is hidden */
+    .menu-toggle {
+        display: none !important;
+    }
+
+    /* Hide mobile menu */
+    .mobile-menu {
+        display: none !important;
+    }
+}
+
+/* ===================== TABLET LANDSCAPE (900px - 1023px) ===================== */
+@media (min-width: 900px) and (max-width: 1023px) {
+    .navbar {
+        padding: 14px 3%;
+    }
+
+    .signin-btn {
+        flex-direction: row;
+        gap: 6px;
+    }
+
+    .nav-left {
+        margin-left: -2%;
+    }
+
+    .logo-spacer {
+        width: 8vw;
+        max-width: 100px;
+    }
+
+    .nav-links {
+        gap: 2vw;
+        margin-left: 2vw;
+    }
+
+    .nav-links li {
+        font-size: 13px;
+    }
+
+    .live-dot {
+        width: 5px;
+        height: 5px;
+    }
+
+    .search-wrapper input {
+        width: 13vw;
+        max-width: 130px;
+        padding: 7px 22px 7px 10px;
+        font-size: 12px;
+    }
+
+    .search-icon {
+        font-size: 12px;
+        right: 8px;
+    }
+
+    .nav-right {
+        gap: 1vw;
+        margin-right: 2vw;
+    }
+
+    .signin-btn {
+        font-size: 13px;
+    }
+
+    .signin-icon {
+        font-size: 15px;
+    }
+
+    /* Ensure hamburger is hidden */
+    .menu-toggle {
+        display: none !important;
+    }
+
+    /* Hide mobile menu */
+    .mobile-menu {
+        display: none !important;
+    }
+}
+
+/* ===================== TABLET PORTRAIT (768px - 899px) ===================== */
+@media (min-width: 768px) and (max-width: 899px) {
+    .navbar {
+        padding: 12px 3%;
+    }
+
+    .signin-btn {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .nav-left {
+        margin-left: -1%;
+    }
+
+    .logo-spacer {
+        width: 6vw;
+        max-width: 60px;
+    }
+
+    .nav-links {
+        gap: 1.5vw;
+        margin-left: 2vw;
+    }
+
+    .nav-links li {
+        font-size: 12px;
+    }
+
+    .live-dot {
+        width: 4px;
+        height: 4px;
+    }
+
+    .search-wrapper input {
+        width: 14vw;
+        max-width: 120px;
+        padding: 6px 20px 6px 8px;
+        font-size: 11px;
+    }
+
+    .search-icon {
+        font-size: 11px;
+        right: 6px;
+    }
+
+    .nav-right {
+        gap: 1vw;
+        margin-right: 2vw;
+    }
+
+    .signin-btn {
+        font-size: 12px;
+    }
+
+    .signin-icon {
+        font-size: 14px;
+    }
+
+    /* Ensure hamburger is hidden */
+    .menu-toggle {
+        display: none !important;
+    }
+
+    /* Hide mobile menu */
+    .mobile-menu {
+        display: none !important;
+    }
+}
+
+/* ===================== MOBILE (576px - 767px) ===================== */
+@media (min-width: 576px) and (max-width: 767px) {
+    .navbar {
+        padding: 12px 3%;
+    }
+
+    .signin-btn {
+        flex-direction: row;
+        gap: 4px;
+    }
+
+    /* Show hamburger on mobile */
+    .menu-toggle {
+        display: flex !important;
+    }
+
+    /* Hide desktop menu on mobile */
+    .nav-links {
+        display: none !important;
+    }
+
+    .nav-left {
+        margin-left: 0;
+    }
+
+    .logo-spacer {
+        width: 3vw;
+        min-width: 15px;
+        max-width: 15px;
+    }
+
+    .nav-logo {
+        height: 28px;
+    }
+
+    /* Hide search input on mobile, show only icon */
+    .search-wrapper input {
+        display: none;
+    }
+
+    .search-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .search-icon {
+        position: static;
+        transform: none;
+        font-size: 18px;
+    }
+
+    .nav-left {
+        gap: 10px;
+    }
+
+    .nav-right {
+        gap: 2vw;
+        margin-right: 0;
+    }
+
+    .signin-text {
+        display: inline;
+        font-size: 13px;
+    }
+
+    .live-dot,
+    .dot-separator {
+        display: none;
+    }
+}
+
+/* ===================== SMALL MOBILE (480px and below) ===================== */
+@media (max-width: 575px) {
+    .navbar {
+        padding: 10px 3%;
+    }
+
+    .signin-btn {
+        flex-direction: row;
+        gap: 2px;
+    }
+
+    /* Show hamburger on mobile */
+    .menu-toggle {
+        display: flex !important;
+    }
+
+    /* Hide desktop menu on mobile */
+    .nav-links {
+        display: none !important;
+    }
+
+    .logo-spacer {
+        width: 2vw;
+        min-width: 8px;
+        max-width: 8px;
+    }
+
+    .nav-logo {
+        height: 24px;
+    }
+
+    /* Hide search input on mobile, show only icon */
+    .search-wrapper input {
+        display: none;
+    }
+
+    .search-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .search-icon {
+        position: static;
+        transform: none;
+        font-size: 16px;
+    }
+
+    .nav-left {
+        gap: 8px;
+        margin-left: 0;
+    }
+
+    .nav-right {
+        gap: 2vw;
+        margin-right: 0;
+    }
+
+    .signin-text {
+        display: none;
+    }
+
+    .signin-btn {
+        font-size: 18px;
+    }
+
+    .signin-icon {
+        font-size: 18px;
+    }
+
+    .live-dot,
+    .dot-separator {
+        display: none;
+    }
+}
+
+/* ===================== MOBILE MENU (Opened State) ===================== */
+@media (max-width: 767px) {
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #0b1726;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: visibility 0.5s ease-in-out, opacity 0.5s ease-in-out, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .mobile-menu.open {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .mobile-menu-items {
+        list-style: none;
+        margin: 0;
+        padding: 25px 0;
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
+    }
+
+    .mobile-menu.open .mobile-menu-items {
+        opacity: 1;
+        transition: opacity 0.4s ease-in-out 0.2s;
+    }
+
+    .mobile-menu-items li {
+        padding: 18px 20px;
+        font-size: 16px;
+        color: #c7d2e3;
+        text-align: center;
+        border-bottom: 1px solid #1f2f4a;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(-15px);
+        transition: background 0.3s ease, color 0.3s ease, opacity 0.5s ease, transform 0.5s ease;
+        transition-delay: calc(0.1s * var(--item-index));
+    }
+
+    .mobile-menu.open .mobile-menu-items li {
+        opacity: 1;
+        transform: translateY(0);
+        transition: background 0.3s ease, color 0.3s ease, opacity 0.5s ease calc(0.1s * var(--item-index)), transform 0.5s ease calc(0.1s * var(--item-index));
+    }
+
+    .mobile-menu-items li:hover {
+        background: #13233d;
+        color: #1f80e0;
+    }
+
+    .mobile-menu-items li:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        background: #0b1726;
+        border-top: 1px solid #1f2f4a;
+        width: 100%;
+        box-sizing: border-box;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.4s ease;
+    }
+
+    .mobile-menu.open .mobile-navbar {
+        transform: translateY(0);
+        opacity: 1;
+        transition: transform 0.6s ease 0.4s, opacity 0.5s ease 0.4s;
+    }
+
+    .mobile-nav-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .mobile-menu-toggle {
+        background: none;
+        border: none;
+        font-size: 26px;
+        color: white;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        transition: transform 0.4s ease, color 0.3s ease;
+    }
+
+    .mobile-menu-toggle:hover {
+        color: #1f80e0;
+        transform: rotate(90deg) scale(1.1);
+    }
+
+    .mobile-nav-logo {
+        height: 32px;
+    }
+
+    .mobile-nav-right {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .mobile-search-icon {
+        color: #1f80e0;
+        font-size: 18px;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .mobile-search-icon:hover {
+        color: #ffffff;
+        transform: scale(1.1);
+    }
+
+    .mobile-signin {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: white;
+        font-size: 13px;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .mobile-signin:hover {
+        color: #1f80e0;
+        transform: scale(1.05);
+    }
+
+    .mobile-signin svg {
+        font-size: 18px;
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-signin:hover svg {
+        transform: translateX(2px);
+    }
+
+    .navbar.original-hidden {
+        display: none;
+    }
+
+    body {
+        transition: margin-top 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    body.menu-open {
+        margin-top: calc(220px + 60px);
+        overflow: hidden;
+    }
+}
+
+/* ===================== ANIMATIONS ===================== */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes rotateIcon {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}

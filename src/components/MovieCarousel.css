@@ -1,0 +1,117 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+
+.carousel-wrapper {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0 40px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.carousel-item {
+    flex-shrink: 0;
+}
+
+/* Arrow Styles */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+.carousel-container:hover .arrow {
+    opacity: 0.8;
+}
+
+.arrow:hover {
+    opacity: 1 !important;
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.arrow.left {
+    left: 10px;
+}
+
+.arrow.right {
+    right: 10px;
+}
+
+/* Progress Indicator */
+.carousel-progress {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+    padding: 10px 0;
+}
+
+.progress-dot {
+    width: 24px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.progress-dot.active {
+    background: #1f80e0;
+    width: 36px;
+    box-shadow: 0 0 8px rgba(31, 128, 224, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .arrow {
+        display: none;
+    }
+
+    .carousel-wrapper {
+        padding: 0 20px;
+    }
+
+    .carousel-progress {
+        bottom: -20px;
+    }
+
+    .progress-dot {
+        width: 16px;
+        height: 2px;
+    }
+
+    .progress-dot.active {
+        width: 24px;
+    }
+}

@@ -1,0 +1,54 @@
+.movie-section {
+    margin-top: 0;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.row-title {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 15px;
+    margin-top: 0;
+    padding-left: 40px;
+}
+
+/* Optional gradient edges */
+.movie-section::before,
+.movie-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.movie-section:hover::before,
+.movie-section:hover::after {
+    opacity: 0.8;
+}
+
+.movie-section::before {
+    left: 0;
+    background: linear-gradient(to right, #0b1726 0%, transparent 100%);
+}
+
+.movie-section::after {
+    right: 0;
+    background: linear-gradient(to left, #0b1726 0%, transparent 100%);
+}
+
+@media (max-width: 767px) {
+    .row-title {
+        padding-left: 20px;
+        font-size: 18px;
+    }
+
+    .movie-section::before,
+    .movie-section::after {
+        display: none;
+    }
+}
