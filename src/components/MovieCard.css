@@ -1,8 +1,8 @@
 .movie-card {
     position: relative;
-    width: 450px;
+    width: 100%;
     /* Desktop size */
-    height: 358.69px;
+    height: 100%;
     border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
@@ -116,10 +116,10 @@
 
 /* Large Desktop (1400px and above) */
 @media (min-width: 1400px) {
-    .movie-card {
+    /* .movie-card {
         width: 450px;
         height: 358.69px;
-    }
+    } */
 
     .movie-title {
         font-size: 20px;
@@ -131,23 +131,16 @@
 }
 
 /* Desktop (1200px - 1399px) */
-@media (min-width: 1200px) and (max-width: 1399px) {
-    .movie-card {
-        width: 400px;
-        height: 318px;
-        /* Maintain ratio: 400 * (358.69/450) */
-    }
-}
+
 
 /* Small Desktop (1024px - 1199px) */
 @media (min-width: 1024px) and (max-width: 1199px) {
-    .movie-card {
-        width: 350px;
-        height: 278px;
-        /* 350 * (358.69/450) */
-    }
 
-    .movie-title {
+    /* .movie-card {
+        width: 450px;
+        height: 358.69px;
+        /* 350 * (358.69/450) */
+    */ .movie-title {
         font-size: 16px;
     }
 
@@ -169,13 +162,12 @@
 
 /* Tablet Landscape (900px - 1023px) */
 @media (min-width: 900px) and (max-width: 1023px) {
-    .movie-card {
-        width: 300px;
-        height: 239px;
-        /* 300 * (358.69/450) */
-    }
 
-    .movie-title {
+    /* .movie-card {
+        width: 450px;
+        height: 358.69px;
+        /* 300 * (358.69/450) */
+    */ .movie-title {
         font-size: 15px;
     }
 
@@ -208,13 +200,12 @@
 
 /* Tablet Portrait (768px - 899px) */
 @media (min-width: 768px) and (max-width: 899px) {
-    .movie-card {
-        width: 250px;
-        height: 199px;
-        /* 250 * (358.69/450) */
-    }
 
-    .movie-title {
+    /* .movie-card {
+        width: 450px;
+        height: 358.69px;
+        /* 250 * (358.69/450) */
+    */ .movie-title {
         font-size: 14px;
     }
 
@@ -258,13 +249,12 @@
 
 /* Mobile (576px - 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
-    .movie-card {
-        width: 200px;
-        height: 159px;
-        /* 200 * (358.69/450) */
-    }
 
-    .movie-title {
+    /* .movie-card {
+        width: 450px;
+        height: 358.69px;
+        /* 200 * (358.69/450) */
+    */ .movie-title {
         font-size: 13px;
     }
 
@@ -308,13 +298,12 @@
 
 /* Small Mobile (480px and below) */
 @media (max-width: 575px) {
-    .movie-card {
-        width: 160px;
-        height: 127px;
-        /* 160 * (358.69/450) */
-    }
 
-    .movie-title {
+    /* .movie-card {
+        width: 450px;
+        height: 358.69px;
+        /* 160 * (358.69/450) */
+    */ .movie-title {
         font-size: 12px;
     }
 
@@ -365,10 +354,10 @@
 
 /* Optional: Extra Small Devices (360px and below) */
 @media (max-width: 360px) {
-    .movie-card {
-        width: 140px;
-        height: 111px;
-    }
+    /* .movie-card {
+        width: 450px;
+        height: 358.69px;
+    } */
 
     .movie-title {
         font-size: 11px;

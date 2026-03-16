@@ -1,117 +1,87 @@
 .carousel-container {
-    position: relative;
+    overflow: hidden;
+    /* ဘေးစွန်းတွေ တစ်ပြင်လုံးလျှံမထွက်အောင် container မှာပဲ ပိတ်ပါ */
     width: 100%;
-    overflow: visible;
+    position: relative;
+    padding: 20px 0;
 }
 
 .carousel-wrapper {
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 0 40px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    -webkit-overflow-scrolling: touch;
-}
-
-.carousel-wrapper::-webkit-scrollbar {
-    display: none;
+    width: 100%;
+    /* အရင်က itemsPerView နဲ့ တွက်ထားတဲ့ width ကို 100% ပြောင်းပါ */
+    overflow: visible;
+    /* ဘေးက ကတ်စွန်းလေးတွေ မြင်ရအောင် visible ထားပါ */
+    position: relative;
+    justify-content: center;
 }
 
 .carousel-track {
     display: flex;
-    gap: 20px;
-    padding: 10px 0;
+    /* gap ကို ဖြုတ်လိုက်ပါ၊ card ထဲမှာ padding နဲ့သွားပါမယ် */
+    will-change: transform;
+    gap: 0;
 }
 
-.carousel-item {
-    flex-shrink: 0;
+/* Card တစ်ခုချင်းစီအတွက် space */
+.carousel-track>div {
+    padding: 0 0px;
+    /* ဒါက gap 20px ဖြစ်အောင် တစ်ဖက်ကို 10px စီ ပေးတာပါ */
+    box-sizing: border-box;
 }
 
-/* Arrow Styles */
 .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 10;
     background: rgba(0, 0, 0, 0.6);
-    color: white;
     border: none;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
     border-radius: 50%;
-    display: flex;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
+    line-height: 0;
     transition: all 0.3s ease;
-    backdrop-filter: blur(4px);
-}
-
-.carousel-container:hover .arrow {
-    opacity: 0.8;
+    z-index: 10;
+    color: white;
+    padding: 0;
 }
 
 .arrow:hover {
-    opacity: 1 !important;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(3, 160, 227, 0.9);
     transform: translateY(-50%) scale(1.1);
 }
 
 .arrow.left {
-    left: 10px;
+    left: 5px;
 }
 
 .arrow.right {
-    right: 10px;
+    right: 5px;
 }
 
-/* Progress Indicator */
-.carousel-progress {
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
+/* Indicators ပိုင်းကတော့ မင်းမူလအတိုင်း သုံးလို့ရပါတယ် */
+.carousel-indicators {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 8px;
-    z-index: 10;
-    padding: 10px 0;
+    margin-top: 20px;
 }
 
-.progress-dot {
-    width: 24px;
-    height: 3px;
+.progress-bar {
+    width: 200px;
+    height: 4px;
     background: rgba(255, 255, 255, 0.2);
-    border-radius: 3px;
-    transition: all 0.3s ease;
+    border-radius: 2px;
+    overflow: hidden;
 }
 
-.progress-dot.active {
-    background: #1f80e0;
-    width: 36px;
-    box-shadow: 0 0 8px rgba(31, 128, 224, 0.5);
-}
-
-/* Responsive */
-@media (max-width: 767px) {
-    .arrow {
-        display: none;
-    }
-
-    .carousel-wrapper {
-        padding: 0 20px;
-    }
-
-    .carousel-progress {
-        bottom: -20px;
-    }
-
-    .progress-dot {
-        width: 16px;
-        height: 2px;
-    }
-
-    .progress-dot.active {
-        width: 24px;
-    }
+.progress-fill {
+    height: 100%;
+    background: #e50914;
+    /* Netflix style red */
+    transition: width 0.3s ease;
 }
