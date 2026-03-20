@@ -12,7 +12,6 @@
     padding-left: 40px;
 }
 
-/* Optional gradient edges */
 .movie-section::before,
 .movie-section::after {
     content: '';

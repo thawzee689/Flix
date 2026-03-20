@@ -1,6 +1,5 @@
 .carousel-container {
     overflow: hidden;
-    /* ဘေးစွန်းတွေ တစ်ပြင်လုံးလျှံမထွက်အောင် container မှာပဲ ပိတ်ပါ */
     width: 100%;
     position: relative;
     padding: 20px 0;
@@ -8,24 +7,19 @@
 
 .carousel-wrapper {
     width: 100%;
-    /* အရင်က itemsPerView နဲ့ တွက်ထားတဲ့ width ကို 100% ပြောင်းပါ */
     overflow: visible;
-    /* ဘေးက ကတ်စွန်းလေးတွေ မြင်ရအောင် visible ထားပါ */
     position: relative;
     justify-content: center;
 }
 
 .carousel-track {
     display: flex;
-    /* gap ကို ဖြုတ်လိုက်ပါ၊ card ထဲမှာ padding နဲ့သွားပါမယ် */
     will-change: transform;
     gap: 0;
 }
 
-/* Card တစ်ခုချင်းစီအတွက် space */
 .carousel-track>div {
     padding: 0 0px;
-    /* ဒါက gap 20px ဖြစ်အောင် တစ်ဖက်ကို 10px စီ ပေးတာပါ */
     box-sizing: border-box;
 }
 
@@ -62,7 +56,6 @@
     right: 5px;
 }
 
-/* Indicators ပိုင်းကတော့ မင်းမူလအတိုင်း သုံးလို့ရပါတယ် */
 .carousel-indicators {
     display: flex;
     flex-direction: column;
@@ -82,6 +75,5 @@
 .progress-fill {
     height: 100%;
     background: #e50914;
-    /* Netflix style red */
     transition: width 0.3s ease;
 }

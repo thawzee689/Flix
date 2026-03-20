@@ -1,6 +1,7 @@
 import "./App.css";
 import Navbar1 from "./components/Navbar1";
 import MovieRow from "./components/MovieRow";
+import ColumnCard from "./components/ColumnCard";
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 
       <Navbar1 />
       <MovieRow />
+      <ColumnCard />
 
 
     </div>
